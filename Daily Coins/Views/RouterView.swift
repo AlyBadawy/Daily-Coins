@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct RouterView: View {
   @StateObject var authVM = AuthViewModel()
   
   var body: some View {
@@ -16,11 +16,7 @@ struct ContentView: View {
         if authVM.userSession == nil {
           LoginView()
         } else {
-          Button {
-            authVM.logout()
-          } label: {
-            Text("log out")
-          }
+          SummaryView()
         }
       }
     }.environmentObject(authVM)
@@ -28,8 +24,8 @@ struct ContentView: View {
 }
 
 
-struct ContentView_Previews: PreviewProvider {
+struct RouterView_Previews: PreviewProvider {
   static var previews: some View {
-    ContentView()
+    RouterView()
   }
 }

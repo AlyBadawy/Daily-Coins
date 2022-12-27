@@ -34,6 +34,7 @@ struct SignUpView: View {
                        text: $fullname)
         InputWithImage(imageName: "lock",
                        placeHolderText: "Password",
+                       isSecureField: true,
                        text: $password)
       }
       .padding(.horizontal, 32)
@@ -51,7 +52,7 @@ struct SignUpView: View {
           .font(.headline)
           .foregroundColor(Color.theme.secondaryTextColor)
           .frame(width: 340, height: 50)
-          .background(Color.theme.accent)
+          .background(Color.theme.green)
           .clipShape(Capsule())
           .padding()
       }

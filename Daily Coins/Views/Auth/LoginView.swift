@@ -24,6 +24,7 @@ struct LoginView: View {
                        text: $email)
         InputWithImage(imageName: "lock",
                        placeHolderText: "Password",
+                       isSecureField: true,
                        text: $password)
       }
       .padding(.horizontal, 32)
@@ -51,8 +52,20 @@ struct LoginView: View {
           .font(.headline)
           .foregroundColor(Color.theme.secondaryTextColor)
           .frame(width: 340, height: 50)
-          .background(Color.theme.accent)
+          .background(Color.theme.green)
           .clipShape(Capsule())
+          .padding()
+      }
+      .shadow(color: .gray.opacity(0.5), radius: 10)
+      .padding(.top, 24)
+      
+      Button {
+        print("Continue as a guest")
+        authModel.signInGuest()
+      } label: {
+        Text("Continue as a guest")
+          .font(.headline)
+          .foregroundColor(Color.theme.accent)
           .padding()
       }
       .shadow(color: .gray.opacity(0.5), radius: 10)

@@ -22,7 +22,7 @@ struct Header: View {
     }
     .frame(height: 260)
     .padding(.leading)
-    .background(Color.theme.accent)
+    .background(Color.theme.green)
     .foregroundColor(Color.theme.secondaryTextColor)
     .clipShape(RoundedShape(corners: [.bottomRight], radius: 120))
     .shadow(color: .gray.opacity(0.5), radius: 10)

@@ -13,4 +13,5 @@ struct User: Identifiable, Decodable {
   let fullname: String
   let profileImageUrl: String
   let email: String
+  let isAnonymous: Bool
 }

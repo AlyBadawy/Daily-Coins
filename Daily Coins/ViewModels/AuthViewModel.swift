@@ -84,6 +84,17 @@ class AuthViewModel: ObservableObject {
     }
   }
   
+  func signInGuest() {
+    Auth.auth().signInAnonymously { authResult, error in
+      guard let user = authResult?.user else { return }
+//      let isAnonymous = user.isAnonymous  // true
+//      let uid = user.uid
+      self.tempUserSession = user
+      self.userSession = self.tempUserSession
+      self.fetchUser()
+    }
+  }
+  
   func fetchUser() {
     print("DEBUG: Fetching user ...")
     guard let uid = self.userSession?.uid else { return }

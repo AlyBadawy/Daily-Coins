@@ -24,7 +24,7 @@ struct Daily_CoinsApp: App {
   // register app delegate for Firebase setup
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      RouterView()
     }
   }
 }

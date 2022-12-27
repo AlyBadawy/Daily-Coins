@@ -10,6 +10,8 @@ import SwiftUI
 struct InputWithImage: View {
   let imageName: String
   let placeHolderText: String
+  var isSecureField: Bool?
+  
   @Binding var text: String
   
   var body: some View {
@@ -21,7 +23,13 @@ struct InputWithImage: View {
           .frame(width: 20, height: 20)
           .foregroundColor(Color.theme.placeHolder)
         
-        TextField(placeHolderText, text: $text)
+        if isSecureField ?? false {
+          SecureField(placeHolderText, text: $text)
+            .textInputAutocapitalization(.never)
+        } else {
+          TextField(placeHolderText, text: $text)
+            .textInputAutocapitalization(.never)
+        }
       }
       Divider()
         .background(Color.theme.placeHolder)
@@ -31,6 +39,9 @@ struct InputWithImage: View {
 
 struct InputWithImage_Previews: PreviewProvider {
   static var previews: some View {
-    InputWithImage(imageName: "envelope", placeHolderText: "Email", text: .constant(""))
+    InputWithImage(imageName: "lock",
+                   placeHolderText: "Password",
+                   isSecureField: true,
+                   text: .constant(""))
   }
 }
