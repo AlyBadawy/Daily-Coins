@@ -19,6 +19,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct Daily_CoinsApp: App {
+  
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
   // register app delegate for Firebase setup
   var body: some Scene {
