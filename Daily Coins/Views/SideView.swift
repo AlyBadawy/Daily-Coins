@@ -8,14 +8,29 @@
 import SwiftUI
 
 struct SideView: View {
+  @EnvironmentObject var authModel: AuthViewModel
+  
   var body: some View {
     VStack(spacing: 2) {
       HStack { Spacer() }
       Image("logo")
         .resizable()
         .scaledToFit()
-        .frame(width: 240, height: 240)
+        .frame(width: 160, height: 160)
         .shadow(radius: 1)
+      
+      Divider()
+        .padding(.horizontal, 4)
+      
+      VStack(alignment: .leading) {
+        HStack { Spacer() }
+        Button {
+          authModel.logout()
+        } label: {
+          labelWithImage(title: "Logout", imageName: "arrow.left.square")
+        }
+      }.padding(.top, 8)
+      
       Spacer()
       Text("Daily Coins! V\(UIApplication.appVersion) (Build: \(UIApplication.buildVersion))")
         .font(.caption2)
@@ -31,6 +46,6 @@ struct SideView: View {
 
 struct SideView_Previews: PreviewProvider {
   static var previews: some View {
-    SideView()
+    SideView().environmentObject(AuthViewModel())
   }
 }

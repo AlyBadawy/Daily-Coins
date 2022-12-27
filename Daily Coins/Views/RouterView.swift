@@ -16,7 +16,7 @@ struct RouterView: View {
         if authVM.userSession == nil {
           LoginView()
         } else {
-          MainView()
+          HomeView()
         }
       }
     }.environmentObject(authVM)

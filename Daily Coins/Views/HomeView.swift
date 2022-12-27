@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct HomeView: View {
 
   @State private var showSideMenu: Bool = false
   
@@ -23,8 +23,8 @@ struct MainView: View {
         SummaryView()
         // MARK: - Side Menu
         if showSideMenu {
-          Color.theme.accent
-            .opacity(showSideMenu ? 0.1 : 0.0)
+          Color.theme.sideShadow
+            .opacity(showSideMenu ? 0.8 : 0.0)
             .onTapGesture {
               withAnimation(.easeInOut) {
                 self.showSideMenu = false
@@ -34,7 +34,7 @@ struct MainView: View {
           SideView()
             .frame(width: 320)
             .offset(x: showSideMenu ? 0 : -320, y: 0)
-            .shadow(color: Color.theme.accent.opacity(0.08), radius: 4)
+            .shadow(radius: 4)
         }
       }
       // MARK: - Navigation Bar
@@ -76,8 +76,8 @@ struct MainView: View {
   
 }
 
-struct MainView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
   static var previews: some View {
-    MainView()
+    HomeView().environmentObject(AuthViewModel())
   }
 }

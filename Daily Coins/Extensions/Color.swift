@@ -21,4 +21,5 @@ struct ColorTheme {
   let logoBG = Color("logoBG")
   let menuBG = Color("menuBG")
   let placeHolder = Color("placeHolder")
+  let sideShadow = Color("sideShadow")
 }
