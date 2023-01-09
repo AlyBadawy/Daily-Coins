@@ -15,6 +15,7 @@ struct CoinDetail: Codable {
   let categories: [String]?
   let coinDetailDescription: Description?
   let links: Links?
+  let links: Links?
   let image: CoinDetailImage?
   let countryOrigin, genesisDate: String?
   let sentimentVotesUpPercentage, sentimentVotesDownPercentage, marketCapRank, coingeckoRank: Double?

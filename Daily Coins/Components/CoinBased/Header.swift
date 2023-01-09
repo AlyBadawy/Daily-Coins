@@ -22,10 +22,10 @@ struct Header: View {
     }
     .frame(height: 260)
     .padding(.leading)
-    .background(Color.theme.green)
-    .foregroundColor(Color.theme.secondaryTextColor)
+    .background(Color.theme.secondaryTextColor)
+    .foregroundColor(Color.theme.accent)
     .clipShape(RoundedShape(corners: [.bottomRight], radius: 120))
-    .shadow(color: .gray.opacity(0.5), radius: 10)
+    .shadow(color: .gray.opacity(0.5), radius: 4)
   }
 }
 

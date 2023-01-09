@@ -48,15 +48,9 @@ struct LoginView: View {
         print("Sign in here")
         authModel.login(withEmail: email, password: password)
       } label: {
-        Text("Sign in...")
-          .font(.headline)
-          .foregroundColor(Color.theme.secondaryTextColor)
-          .frame(width: 340, height: 50)
-          .background(Color.theme.green)
-          .clipShape(Capsule())
-          .padding()
+        RoundedButton(text: "Sign in...")
       }
-      .shadow(color: .gray.opacity(0.5), radius: 10)
+      .shadow(color: .gray.opacity(0.5), radius: 4)
       .padding(.top, 24)
       
       Button {

@@ -12,9 +12,9 @@ struct RoundedButton: View {
   var body: some View {
     Text(text)
       .font(.headline)
-      .foregroundColor(Color.theme.secondaryTextColor)
+      .foregroundColor(Color.theme.accent)
       .frame(width: 340, height: 50)
-      .background(Color.theme.accent)
+      .background(Color.theme.secondaryTextColor)
       .clipShape(Capsule())
       .padding()
   }

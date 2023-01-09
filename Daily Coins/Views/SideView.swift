@@ -22,13 +22,54 @@ struct SideView: View {
       Divider()
         .padding(.horizontal, 4)
       
+      if authModel.userSession?.isAnonymous ?? true {
+        labelWithImage(title: "You signed in as a guest",
+                       imageName: "person.fill.questionmark",
+                       alert: true)
+        .padding(.top, 8)
+      }
+      
       VStack(alignment: .leading) {
         HStack { Spacer() }
+        
+        Button {
+          //
+        } label: {
+          labelWithImage(title: "Settings", imageName: "gearshape.2")
+        }
+        
+        
+        
         Button {
           authModel.logout()
         } label: {
           labelWithImage(title: "Logout", imageName: "arrow.left.square")
         }
+        
+        Spacer()
+        
+        Button {
+          //
+        } label: {
+          labelWithImage(title: "Privacy Policy", imageName: "eye.trianglebadge.exclamationmark")
+        }
+        
+        Button {
+          //
+        } label: {
+          labelWithImage(title: "Credits", imageName: "heart")
+        }
+        Button {
+          //
+        } label: {
+          labelWithImage(title: "Write to the devs", imageName: "paperplane")
+        }
+        
+        Spacer()
+        Spacer()
+        Spacer()
+        
+        
       }.padding(.top, 8)
       
       Spacer()

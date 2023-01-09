@@ -10,16 +10,19 @@ import SwiftUI
 struct labelWithImage: View {
   let title: String
   let imageName: String
+  var alert: Bool?
   
   var body: some View {
     HStack(spacing: 16) {
       Image(systemName: imageName)
         .font(.headline)
+        .frame(width: 24)
+        .scaledToFit()
       Text(title)
-        .font(.subheadline)
+        .font(alert ?? false ? .headline : .subheadline)
       Spacer()
     }
-    .foregroundColor(Color.theme.accent)
+    .foregroundColor(alert ?? false ? Color.theme.red : Color.theme.accent)
     .frame(height: 40)
     .padding(.horizontal)
   }

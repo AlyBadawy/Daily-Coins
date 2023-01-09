@@ -40,6 +40,11 @@ struct SignUpView: View {
       .padding(.horizontal, 32)
       .padding(.top, 44)
       
+      Text("By signing up and creating an account, you agree to our terms of use and privacy policy")
+        .padding()
+        .font(.caption2)
+        .foregroundColor(Color.theme.accent)
+      
       Button {
         print("Sign up here")
         authModel.signup(withEmail: email,
@@ -48,13 +53,7 @@ struct SignUpView: View {
                          username: username
         )
       } label: {
-        Text("Sign up...")
-          .font(.headline)
-          .foregroundColor(Color.theme.secondaryTextColor)
-          .frame(width: 340, height: 50)
-          .background(Color.theme.green)
-          .clipShape(Capsule())
-          .padding()
+        RoundedButton(text: "Sign up...")
       }
       .shadow(color: .gray.opacity(0.5), radius: 10)
       .padding(.top, 24)
